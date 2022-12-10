@@ -25,18 +25,18 @@ def photo_processing(message):
     downloaded_file = bot.download_file(file_info.file_path)
     with open(f"{fileID}.jpg", "wb") as new_file:
         new_file.write(downloaded_file)
-    if message.caption.isdigit():
+    if message.caption is not None and message.caption.isdigit():
         if int(message.caption) <= 10:
             for i in range(int(message.caption)):
                 dem = Demotivator(get_text(), get_text())
-                dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
+                dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg",watermark='t.me/Demotivatorokcubot')
         else:
             for i in range(10):
                 dem = Demotivator(get_text(), get_text())
-                dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
+                dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg",watermark='t.me/Demotivatorokcubot')
     else:
         dem = Demotivator(get_text(), get_text())
-        dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
+        dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg",watermark='t.me/Demotivatorokcubot')
     with open(f"{fileID}.jpg", "rb") as photo:
         bot.send_photo(
             message.chat.id, photo, caption="Сделано в\nt.me/Demotivatorokcubot"
