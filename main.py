@@ -5,7 +5,7 @@ from simpledemotivators import Demotivator
 
 
 bot = telebot.TeleBot(
-    "5661752388:AAE07pQHkT3IPpYoRdkaNoOqIVmmuSoKw5Y", parse_mode="HTML", skip_pending=True
+    "5661752388:AAE07pQHkT3IPpYoRdkaNoOqIVmmuSoKw5Y", parse_mode="HTML", skip_pending=True, num_threads=16
 )
 
 
