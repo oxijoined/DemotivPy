@@ -30,6 +30,10 @@ def photo_processing(message):
             for i in range(int(message.caption)):
                 dem = Demotivator(get_text(), get_text())
                 dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
+        else:
+            for i in range(10):
+                dem = Demotivator(get_text(), get_text())
+                dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
     else:
         dem = Demotivator(get_text(), get_text())
         dem.create(f"{fileID}.jpg", result_filename=f"{fileID}.jpg")
